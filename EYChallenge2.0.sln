@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EYChallenge2.0", "EYChallenge2.0\EYChallenge2.0.csproj", "{B744539F-7511-4051-8160-8C4BB7D5E3FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B744539F-7511-4051-8160-8C4BB7D5E3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B744539F-7511-4051-8160-8C4BB7D5E3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B744539F-7511-4051-8160-8C4BB7D5E3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B744539F-7511-4051-8160-8C4BB7D5E3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12C06882-FB5A-4BD5-ACFE-F4B1B0037FC8}
+	EndGlobalSection
+EndGlobal
