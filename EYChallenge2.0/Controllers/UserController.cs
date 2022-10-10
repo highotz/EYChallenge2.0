@@ -45,6 +45,7 @@ namespace EYChallenge2._0.Controllers
             Nuser.password = user.password;
             Nuser.mandatorySkills = user.mandatorySkills;
             Nuser.softSkills = user.softSkills;
+            Nuser.description = user.description;
 
 
             _userRepository.Add(Nuser);

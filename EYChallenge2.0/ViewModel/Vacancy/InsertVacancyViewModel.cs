@@ -12,8 +12,5 @@
         public List<string> softSkills { get; set; }
 
         public List<string> differentialskills { get; set; }
-        public DateTime createDate { get; set; }
-        public bool enable { get; set; }
-        public bool deleted { get; set; }
     }
 }

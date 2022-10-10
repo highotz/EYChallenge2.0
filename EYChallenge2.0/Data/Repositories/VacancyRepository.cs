@@ -13,7 +13,7 @@ namespace EYChallenge2._0.Data.Repositories
         {
             var client = new MongoClient(dbConfig.ConnectionString);
             var database = client.GetDatabase(dbConfig.DatabaseName);
-            _collection = database.GetCollection<Vacancy>("vacancies");
+            _collection = database.GetCollection<Vacancy>("Vacancies");
         }
         public Vacancy Add(Vacancy vacancy)
         {

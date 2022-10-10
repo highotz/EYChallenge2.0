@@ -15,5 +15,6 @@ namespace EYChallenge2._0.Models
         public bool deleted { get;  set; }
         public List<string> mandatorySkills { get; set; }
         public List<string> softSkills { get; set; }
+        public string description { get; set; }
     }
 }

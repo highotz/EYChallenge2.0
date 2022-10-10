@@ -1,5 +1,6 @@
 ﻿using EYChallenge2._0.Data.Repositories.Interfaces;
 using EYChallenge2._0.Models;
+using EYChallenge2._0.ViewModel.Vacancy;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -36,7 +37,7 @@ namespace EYChallenge2._0.Controllers
 
         // POST api/<VacancyController>
         [HttpPost]
-        public void Post([FromBody] Vacancy vacancy)
+        public void Post([FromBody] InsertVacancyViewModel vacancy)
         {
             Vacancy Nvacancy = new Vacancy();
             Nvacancy.title = vacancy.title;
@@ -62,6 +63,13 @@ namespace EYChallenge2._0.Controllers
         public void Delete(string id)
         {
             _vacancyRepository.Delete(id);
+        }
+
+        // DELETE api/<UserController>/5
+        [HttpPut("Disable/{id}")]
+        public void Disable(string id)
+        {
+            _vacancyRepository.disable(id);
         }
     }
 }
