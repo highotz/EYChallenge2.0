@@ -6,7 +6,7 @@ namespace EYChallenge2._0.Data.Repositories.Interfaces
     {
         void Add(UserVacancy apply);
         public void Delete(string userId, string vacancyId);
-        public UserVacancy GetByUserId(string userId);
+        public List<UserVacancy> GetByUserId(string userId);
         public List<UserVacancy> GetByVacancyId(string vacancyId);
     }
 }

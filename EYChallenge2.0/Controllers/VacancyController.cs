@@ -13,10 +13,14 @@ namespace EYChallenge2._0.Controllers
     {
 
         private IVacancyRepository _vacancyRepository;
+        private IUserVacancyRepository _userVacancyRepository;
+        private IUserRepository _userRepository;
 
-        public VacancyController(IVacancyRepository vacancyRepository)
+        public VacancyController(IVacancyRepository vacancyRepository, IUserVacancyRepository userVacancyRepository, IUserRepository userRepository)
         {
             _vacancyRepository = vacancyRepository;
+            _userVacancyRepository = userVacancyRepository;
+            _userRepository = userRepository;
         }
 
 
@@ -71,5 +75,19 @@ namespace EYChallenge2._0.Controllers
         {
             _vacancyRepository.disable(id);
         }
+
+        [HttpGet("Applies")]
+        public IEnumerable<User> GetAppliedUsers([FromBody] Vacancy vacancy)
+        {
+            List<UserVacancy> applies = _userVacancyRepository.GetByVacancyId(vacancy.id);
+            List<User> users = new List<User>();
+            foreach (UserVacancy appliesItem in applies)
+            {
+                users.Add(_userRepository.GetById(appliesItem.userId));
+            }
+
+            return users;
+        }
+
     }
 }

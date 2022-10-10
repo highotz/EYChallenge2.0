@@ -28,9 +28,9 @@ namespace EYChallenge2._0.Data.Repositories
             _collection.DeleteOne(uv => uv.userId == userId && uv.vacancyId == vacancyId);
         }
 
-        public UserVacancy GetByUserId(string userId)
+        public List<UserVacancy> GetByUserId(string userId)
         {
-            return _collection.Find<UserVacancy>(u => u.userId == userId).FirstOrDefault();
+            return _collection.Find<UserVacancy>(u => u.userId == userId).ToList();
         }
 
         public List<UserVacancy> GetByVacancyId(string vacancyId)

@@ -14,11 +14,13 @@ namespace EYChallenge2._0.Controllers
 
         private IUserRepository _userRepository;
         private IUserVacancyRepository _userVacancyRepository;
+        private IVacancyRepository _vacancyRepository;
 
-        public UserController(IUserRepository userRepository, IUserVacancyRepository userVacancyRepository)
+        public UserController(IUserRepository userRepository, IUserVacancyRepository userVacancyRepository, IVacancyRepository vacancyRepository)
         {
             _userRepository = userRepository;
             _userVacancyRepository = userVacancyRepository;
+            _vacancyRepository = vacancyRepository;
         }
 
 
@@ -92,9 +94,16 @@ namespace EYChallenge2._0.Controllers
 
         // DELETE api/<UserController>/5
         [HttpGet("Apply")]
-        public void GetUserApplies([FromBody] User user)
+        public IEnumerable<Vacancy> GetUserApplies([FromBody] User user)
         {
-            _userVacancyRepository.GetByUserId(user.id);
+            List<UserVacancy> applies = _userVacancyRepository.GetByUserId(user.id);
+            List<Vacancy> vacancies = new List<Vacancy>();
+            foreach (UserVacancy appliesItem in applies)
+            {
+                vacancies.Add(_vacancyRepository.GetById(appliesItem.vacancyId));
+            }
+
+            return vacancies;
         }
     }
 }
