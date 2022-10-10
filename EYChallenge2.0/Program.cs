@@ -16,6 +16,7 @@ builder.Services.AddSingleton<IDatabaseConfig>(sp => sp.GetRequiredService<IOpti
 
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IVacancyRepository, VacancyRepository>();
+builder.Services.AddSingleton<IUserVacancyRepository, UserVacanccyRepository>();
 
 var app = builder.Build();
 

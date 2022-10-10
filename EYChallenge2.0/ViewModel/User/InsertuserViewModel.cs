@@ -1,4 +1,6 @@
-﻿namespace EYChallenge2._0.ViewModel.User
+﻿using EYChallenge2._0.Models;
+
+namespace EYChallenge2._0.ViewModel.User
 {
     public class InsertUserViewModel
     {
@@ -8,5 +10,7 @@
         public List<string> mandatorySkills { get; set; }
         public List<string> softSkills { get; set; }
         public string description { get; set; }
+        public List<UserLanguages>? languages { get; set; }
+        public List<userEducation>? Education { get; set; }
     }
 }

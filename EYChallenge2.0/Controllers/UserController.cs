@@ -13,10 +13,12 @@ namespace EYChallenge2._0.Controllers
     {
 
         private IUserRepository _userRepository;
+        private IUserVacancyRepository _userVacancyRepository;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, IUserVacancyRepository userVacancyRepository)
         {
             _userRepository = userRepository;
+            _userVacancyRepository = userVacancyRepository;
         }
 
 
@@ -46,6 +48,8 @@ namespace EYChallenge2._0.Controllers
             Nuser.mandatorySkills = user.mandatorySkills;
             Nuser.softSkills = user.softSkills;
             Nuser.description = user.description;
+            Nuser.Education = user.Education;
+            Nuser.languages = user.languages;
 
 
             _userRepository.Add(Nuser);
@@ -72,5 +76,25 @@ namespace EYChallenge2._0.Controllers
             _userRepository.disable(id);
         }
 
+        // DELETE api/<UserController>/5
+        [HttpPost("Apply")]
+        public void ApplyForVacancy([FromBody] UserVacancy apply)
+        {
+            _userVacancyRepository.Add(apply);
+        }
+
+        // DELETE api/<UserController>/
+        [HttpDelete("Apply")]
+        public void DeleteApply([FromBody] UserVacancy apply)
+        {
+            _userVacancyRepository.Delete(apply.userId, apply.vacancyId);
+        }
+
+        // DELETE api/<UserController>/5
+        [HttpGet("Apply")]
+        public void GetUserApplies([FromBody] User user)
+        {
+            _userVacancyRepository.GetByUserId(user.id);
+        }
     }
 }
