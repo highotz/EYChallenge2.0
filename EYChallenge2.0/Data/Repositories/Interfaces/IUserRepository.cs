@@ -1,7 +1,7 @@
 ﻿using EYChallenge2._0.Models;
 using EYChallenge2._0.ViewModel;
 
-namespace EYChallenge2._0.Data.Interfaces
+namespace EYChallenge2._0.Data.Repositories.Interfaces
 {
     public interface IUserRepository
     {

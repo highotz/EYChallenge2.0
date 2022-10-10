@@ -13,5 +13,7 @@ namespace EYChallenge2._0.Models
         public DateTime? createDate { get;  set; }
         public bool enable { get;  set; }
         public bool deleted { get;  set; }
+        public List<string> mandatorySkills { get; set; }
+        public List<string> softSkills { get; set; }
     }
 }

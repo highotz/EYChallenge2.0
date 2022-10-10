@@ -1,6 +1,6 @@
 using EYChallenge2._0.Data.Configuration;
-using EYChallenge2._0.Data.Interfaces;
-using EYChallenge2._0.Data.Repositories.Interafaces;
+using EYChallenge2._0.Data.Repositories;
+using EYChallenge2._0.Data.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +15,7 @@ builder.Services.Configure<DatabaseConfig>(builder.Configuration.GetSection("Mon
 builder.Services.AddSingleton<IDatabaseConfig>(sp => sp.GetRequiredService<IOptions<DatabaseConfig>>().Value);
 
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IVacancyRepository, VacancyRepository>();
 
 var app = builder.Build();
 

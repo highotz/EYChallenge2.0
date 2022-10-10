@@ -1,4 +1,4 @@
-﻿using EYChallenge2._0.Data.Interfaces;
+﻿using EYChallenge2._0.Data.Repositories.Interfaces;
 using EYChallenge2._0.Models;
 using EYChallenge2._0.ViewModel;
 using Microsoft.AspNetCore.Mvc;

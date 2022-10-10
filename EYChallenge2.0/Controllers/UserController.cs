@@ -1,4 +1,4 @@
-﻿using EYChallenge2._0.Data.Interfaces;
+﻿using EYChallenge2._0.Data.Repositories.Interfaces;
 using EYChallenge2._0.Models;
 using EYChallenge2._0.ViewModel.User;
 using Microsoft.AspNetCore.Mvc;
@@ -37,14 +37,16 @@ namespace EYChallenge2._0.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] InsertuserViewModel user)
+        public void Post([FromBody] InsertUserViewModel user)
         {
             User Nuser = new User();
             Nuser.name = user.name;
             Nuser.email = user.email;
             Nuser.password = user.password;
-            
-            
+            Nuser.mandatorySkills = user.mandatorySkills;
+            Nuser.softSkills = user.softSkills;
+
+
             _userRepository.Add(Nuser);
         }
 
@@ -63,7 +65,7 @@ namespace EYChallenge2._0.Controllers
         }
 
         // DELETE api/<UserController>/5
-        [HttpDelete("Disable/{id}")]
+        [HttpPut("Disable/{id}")]
         public void Disable(string id)
         {
             _userRepository.disable(id);

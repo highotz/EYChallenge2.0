@@ -1,10 +1,10 @@
 ﻿using EYChallenge2._0.Data.Configuration;
-using EYChallenge2._0.Data.Interfaces;
+using EYChallenge2._0.Data.Repositories.Interfaces;
 using EYChallenge2._0.Models;
 using EYChallenge2._0.ViewModel;
 using MongoDB.Driver;
 
-namespace EYChallenge2._0.Data.Repositories.Interafaces
+namespace EYChallenge2._0.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
